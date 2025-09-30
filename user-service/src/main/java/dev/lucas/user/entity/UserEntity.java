@@ -12,7 +12,7 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Users {
+public class UserEntity {
 
     private static final long serialVersionUID = 1L;
 
