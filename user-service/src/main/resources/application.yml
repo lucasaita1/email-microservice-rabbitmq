@@ -10,13 +10,14 @@ spring:
 
   # RabbitMQ Configuration
   rabbitmq:
-    host: ${RABBITMQ_HOST}
-    port: ${RABBITMQ_PORT:5670}
-    username: ${RABBITMQ_USERNAME}
-    password: ${RABBITMQ_PASSWORD}
-    virtual-host: ${RABBITMQ_VHOST}
+    host: ${RABBITMQ_HOST2}
+    port: ${RABBITMQ_PORT2}
+    username: ${RABBITMQ_USERNAME2}
+    password: ${RABBITMQ_PASSWORD2}
+    virtual-host: ${RABBITMQ_VHOST2}
     ssl:
-      enabled: ${RABBITMQ_SSL:true}
+      enabled: true
+
 
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
