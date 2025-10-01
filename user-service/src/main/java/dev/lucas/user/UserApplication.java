@@ -1,17 +1,18 @@
 package dev.lucas.user;
 
+import dev.lucas.user.producer.UserProducer;
 import io.github.cdimascio.dotenv.Dotenv;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class UserApplication {
 
     static {
-        // Carrega o arquivo .env
+        // Carrega as variáveis do .env antes de qualquer bean do Spring
         Dotenv dotenv = Dotenv.load();
-
-        // Injeta as variáveis do .env no ambiente do sistema
         dotenv.entries().forEach(entry ->
                 System.setProperty(entry.getKey(), entry.getValue())
         );
@@ -19,5 +20,14 @@ public class UserApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(UserApplication.class, args);
+
+    }
+
+    @Bean
+    CommandLineRunner runner(UserProducer producer) {
+        return args -> {
+            producer.sendMensagem("Mensagem de teste enviada ao iniciar");
+        };
     }
 }
+
