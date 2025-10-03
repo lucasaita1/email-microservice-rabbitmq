@@ -23,11 +23,5 @@ public class UserApplication {
 
     }
 
-    @Bean
-    CommandLineRunner runner(UserProducer producer) {
-        return args -> {
-            producer.sendMensagem("Mensagem de teste enviada ao iniciar");
-        };
-    }
 }
 
