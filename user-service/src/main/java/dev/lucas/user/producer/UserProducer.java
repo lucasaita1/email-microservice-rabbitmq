@@ -1,22 +1,29 @@
 package dev.lucas.user.producer;
 
 
+import dev.lucas.user.dto.EmailDto;
+import dev.lucas.user.entity.UserEntity;
+import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
 
 
 @Component
+@RequiredArgsConstructor
 public class UserProducer {
 
     private final RabbitTemplate rabbitTemplate;
+    private final String routingkey = "email-queue";
 
-    public UserProducer(RabbitTemplate rabbitTemplate) {
-        this.rabbitTemplate = rabbitTemplate;
-    }
+    public void sendMensagem(UserEntity userEntity) {
 
-    public void sendMensagem(String msg) {
-        // envia para a fila "teste"
-        rabbitTemplate.convertAndSend("teste", msg);
-        System.out.println("📤 Mensagem enviada: " + msg);
+        var emailDto = new EmailDto();
+        emailDto.setUserId(userEntity.getUserId());
+        emailDto.setTo(userEntity.getEmail());
+        emailDto.setSubject("Bem-vindo ao nosso sistema!");
+        emailDto.setBody("Olá " + userEntity.getUsername() + ", obrigado por se cadastrar em nosso sistema.");
+
+        rabbitTemplate.convertAndSend( "", routingkey, userEntity );
+
     }
 }
