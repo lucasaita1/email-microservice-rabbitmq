@@ -23,7 +23,7 @@ public class UserController {
     ResponseEntity<UserResponse> saveUser(@RequestBody UserRequest user) {
         var userEntity = new  UserEntity();
         BeanUtils.copyProperties(user, userEntity);
-        userService.saveUser(userEntity);
+        userService.saveAndPublish(userEntity);
         var userResponse = new UserResponse(
                 userEntity.getUserId(),
                 userEntity.getUsername(),
