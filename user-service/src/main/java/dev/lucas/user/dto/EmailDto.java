@@ -17,7 +17,7 @@ import java.util.UUID;
 @NoArgsConstructor
 public class EmailDto {
 
-    private UUID UserId;
+    private UUID userId;
     private String to;
     private String subject;
     private String body;
