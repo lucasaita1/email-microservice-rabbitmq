@@ -23,7 +23,7 @@ public class UserProducer {
         emailDto.setSubject("Bem-vindo ao nosso sistema!");
         emailDto.setBody("Olá " + userEntity.getUsername() + ", obrigado por se cadastrar em nosso sistema.");
 
-        rabbitTemplate.convertAndSend( "", routingkey, userEntity );
+        rabbitTemplate.convertAndSend( "", routingkey, emailDto );
 
     }
 }
