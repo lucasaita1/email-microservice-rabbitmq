@@ -21,7 +21,7 @@ public class UserProducer {
         emailDto.setUserId(userEntity.getUserId());
         emailDto.setTo(userEntity.getEmail());
         emailDto.setSubject("Bem-vindo ao nosso sistema!");
-        emailDto.setBody("Olá " + userEntity.getUsername() + ", obrigado por se cadastrar em nosso sistema.");
+        emailDto.setBody("Olá " + userEntity.getUsername() + ", obrigado por se cadastrar em nosso sistema. Esta é uma mensagem automática de boas-vindas.");
 
         rabbitTemplate.convertAndSend( "", routingkey, emailDto );
 
