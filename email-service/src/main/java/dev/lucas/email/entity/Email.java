@@ -16,12 +16,10 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Email {
 
-    private static final long serialVersionUID = 1L;
-
-
+    
     @Id
-    private UUID id;
-    private UUID userId;
+    private String id;
+    private String userId;
     private String from;
     private String to;
     private String subject;
