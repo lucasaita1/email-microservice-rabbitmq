@@ -395,16 +395,6 @@ Esta arquitetura está pronta para a nuvem e pode ser implantada em:
 - **GCP**: Cloud Run ou GKE
 - **Heroku**: Com add-on CloudAMQP
 
----
-
-## 🔐 Considerações de Segurança
-
-- Senhas devem ser criptografadas (considere adicionar Spring Security com BCrypt)
-- Use HTTPS em produção
-- Proteja as credenciais do RabbitMQ
-- Implemente limitação de taxa nos endpoints da API
-- Adicione autenticação e autorização
-- Use variáveis de ambiente para todos os dados sensíveis
 
 ---
 
@@ -415,10 +405,6 @@ Esta arquitetura está pronta para a nuvem e pode ser implantada em:
 - [ ] Adicionar templates de e-mail com Thymeleaf
 - [ ] Implementar rastreamento de e-mail (aberto, clicado)
 - [ ] Adicionar documentação da API com Swagger/OpenAPI
-- [ ] Implementar políticas de retry para e-mails falhados
-- [ ] Adicionar monitoramento com Spring Actuator e Prometheus
-- [ ] Implementar padrão circuit breaker com Resilience4j
-- [ ] Adicionar rastreamento distribuído com Zipkin
 - [ ] Criar dashboard administrativo para análise de e-mails
 
 ---
@@ -448,14 +434,6 @@ Este projeto é open source e está disponível sob a [Licença MIT](LICENSE).
 - GitHub: [@lucasaita1](https://github.com/lucasaita1)
 - LinkedIn: [Lucas Aita](https://www.linkedin.com/in/lucas-aita/)
 
----
-
-## 🙏 Agradecimentos
-
-- Documentação do Spring Boot
-- Tutoriais do RabbitMQ
-- Documentação do MongoDB
-- Documentação do PostgreSQL
 
 ---
 
