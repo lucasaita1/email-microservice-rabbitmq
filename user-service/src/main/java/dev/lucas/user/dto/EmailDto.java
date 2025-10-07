@@ -1,6 +1,6 @@
 package dev.lucas.user.dto;
 
-import jakarta.persistence.GeneratedValue;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
