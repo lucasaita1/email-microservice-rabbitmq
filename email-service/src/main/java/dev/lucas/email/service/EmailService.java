@@ -6,7 +6,6 @@ import dev.lucas.email.enums.EmailStatus;
 import dev.lucas.email.repository.EmailRepository;
 import io.github.cdimascio.dotenv.Dotenv;
 import lombok.RequiredArgsConstructor;
-import lombok.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
